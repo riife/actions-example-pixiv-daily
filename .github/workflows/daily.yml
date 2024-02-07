@@ -1,0 +1,16 @@
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "0 4 * * *"
+        # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+
+jobs:
+    job:
+        permissions:
+            contents: write
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: node index.js
+            - uses: actions4git/add-commit-push@v1
+            # https://github.com/marketplace/actions/add-commit-and-push

@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@__dirname/pixiv-web-api": "^0.1.2"
+  }
+}
